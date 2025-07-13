@@ -1,4 +1,26 @@
+import sqlalchemy
+import pandas as pd
 from sqlalchemy import create_engine
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, Float, Boolean, Date
+from sqlalchemy import insert
+from datetime import datetime
+from sqlalchemy import text
+
+# Replace with your actual credentials
+host = 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com'
+user = '3qKZvyc8Bw7Ckf1.root'
+password = 'ixPIapSBo4owm2Qf'
+database = 'Asteroids'
+
+
+# Create SQLAlchemy engine
+# Reconnect to the Asteroidsnew DB
+engine = sqlalchemy.create_engine("mysql+mysqlconnector://3qKZvyc8Bw7Ckf1.root:ixPIapSBo4owm2Qf@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/Asteroids")
+
+metadata = MetaData()
+
+from sqlalchemy import create_engine
+
 # Connect to the database (replace with your own credentials)
 engine = sqlalchemy.create_engine("mysql+mysqlconnector://3qKZvyc8Bw7Ckf1.root:ixPIapSBo4owm2Qf@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/Asteroids")
 
